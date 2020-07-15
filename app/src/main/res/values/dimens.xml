@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_recyclerView">8dp</dimen>
+    <dimen name="fab_margin">32dp</dimen>
+    <dimen name="size_zero_dp">0dp</dimen>
+    <dimen name="layout_margin_constraint_layout">8dp</dimen>
+    <dimen name="padding_constraint_layout">15dp</dimen>
+    <dimen name="text_note_title">18sp</dimen>
+    <dimen name="text_note_date">15sp</dimen>
+    <dimen name="img_empty_note_width">970dp</dimen>
+    <dimen name="img_empty_note_height">598dp</dimen>
+    <dimen name="padding_editText_title">8dp</dimen>
+    <dimen name="margin_top_textView_date">25dp</dimen>
+    <dimen name="margin_start_textView_date">15dp</dimen>
+</resources>

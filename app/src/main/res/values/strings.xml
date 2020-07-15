@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Блокнот</string>
+    <string name="create_and_editing_note">Создание и редактирование заметки</string>
+    <string name="img_empty_note">картинка пустого листка-заметки</string>
+    <string name="enter_title">Введите название</string>
+    <string name="enter_description">Введите описание</string>
+    <string name="date_of_update">Обновлено: %s</string>
+    <string name="save_note">сохранить заметку</string>
+    <string name="auto_fill_hint_description">Описание</string>
+    <string name="auto_fill_hint_title">Название</string>
+    <string name="enter_all_fields">Заполните все поля!</string>
+    <string name="successful_saving">Успешное сохранение!</string>
+    <string name="restore_a_note">Восстановить заметку?</string>
+    <string name="note_restored">Заметка восстановлена</string>
+    <string name="recover">Восстановить</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="save_the_changes">Были внесены изменения. Сохранить?</string>
+</resources>
