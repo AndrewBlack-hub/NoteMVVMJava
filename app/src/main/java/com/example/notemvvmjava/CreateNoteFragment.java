@@ -6,6 +6,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -36,6 +37,7 @@ public class CreateNoteFragment extends Fragment implements ICreateNoteView {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_note, container, false);
         viewModelCreateNote = new ViewModelProvider(this).get(CreateNoteViewModel.class);
+        setHasOptionsMenu(true);
         editTextTitle = view.findViewById(R.id.editTextTitle);
         editTextDescription = view.findViewById(R.id.editTextDescription);
         textViewDate = view.findViewById(R.id.textViewDateOfChangeNote);
@@ -57,7 +59,8 @@ public class CreateNoteFragment extends Fragment implements ICreateNoteView {
         if (item.getItemId() == R.id.action_save_note) {
             if (note != null) {
                 if (viewModelCreateNote.validation(title, description)) {
-                    viewModelCreateNote.updateNote(new Note(note.getId(), title, description, viewModelCreateNote.date()));
+                    viewModelCreateNote.updateNote(new Note(note.getId(), title, description,
+                            viewModelCreateNote.date()));
                     goHome();
                 } else {
                     showMsgFailValid();
@@ -123,14 +126,15 @@ public class CreateNoteFragment extends Fragment implements ICreateNoteView {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
                 if (note != null) {
                     if (!(newNoteForEquals().equals(startNote()))) {
-                        viewModelCreateNote.createAlertDialog(getContext());
+                        viewModelCreateNote.createAlertDialog(getContext(), getTitleFromEditText(),
+                                getDescriptionFromEditText(), newNoteForEquals(), view);
                     } else {
                         goHome();
                     }

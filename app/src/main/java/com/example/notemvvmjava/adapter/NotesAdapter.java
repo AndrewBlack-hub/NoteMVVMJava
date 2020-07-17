@@ -86,7 +86,6 @@ public class NotesAdapter extends ListAdapter<Note, NotesAdapter.NotesViewHolder
                     return true;
                 }
             });
-
         }
     }
 }
